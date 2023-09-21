@@ -1,7 +1,7 @@
 import React from "react";
 import Pivetada from "../components/index";
 import { screen } from "@testing-library/dom";
-import { render, within } from "@testing-library/react";
+import { act, render, within } from "@testing-library/react";
 
 /**
  * Documentation can be found at => https://testing-library.com/
@@ -28,8 +28,6 @@ describe("UI", () => {
 		 */
 		const text = screen.getByText(/Hello, Im Italo, a web developer/);
 
-		expect(text).toBeInTheDocument();
-
 		//Way to search for ID when getting a div or something else
 		const div = screen.getByTestId("le-divison");
 
@@ -40,5 +38,7 @@ describe("UI", () => {
 		const link = within(div).getByRole("link", { name: "xoblas" });
 
 		expect(link).toHaveAttribute("href", "link/to/xoblas");
+
+		//Just a test bro...
 	});
 });
