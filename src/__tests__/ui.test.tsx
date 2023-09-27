@@ -2,6 +2,7 @@ import React from "react";
 import Pivetada from "../components/index";
 import { screen } from "@testing-library/dom";
 import { act, render, within } from "@testing-library/react";
+import StateTest from "components/StateTest";
 
 /**
  * Documentation can be found at => https://testing-library.com/
