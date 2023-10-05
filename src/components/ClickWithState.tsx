@@ -6,10 +6,10 @@ const ClickWithState = () => {
 	return (
 		<>
 			<div>
-				<button onClick={() => setCount(count + 1)}>
+				<button onClick={() => setCount((prev) => prev + 1)}>
 					Hi, click me to add one to the counter :devil:
 				</button>
-				<button onClick={() => setCount(count - 1)}>
+				<button onClick={() => setCount((prev) => prev - 1)}>
 					Hi, click me to subtract one to the counter :devil:
 				</button>
 			</div>
