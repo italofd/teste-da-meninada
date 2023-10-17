@@ -1,8 +1,13 @@
-import InputBox from "app/components/index/InputBox";
-import UsersList from "app/components/index/UsersList";
-import React from "react";
+"use client";
+
+import InputBox from "app/components/main/InputBox";
+import UsersList from "app/components/main/UsersList";
+import React, { useState } from "react";
+import { User } from "./components/main/types";
 
 const Page = () => {
+	const [listOfUsers, setListOfUsers] = useState<User[]>([]);
+
 	return (
 		<div
 			color="#FFFFF"
@@ -14,8 +19,18 @@ const Page = () => {
 				display: "flex",
 			}}
 		>
-			<InputBox />
-			<UsersList />
+			<InputBox
+				setListOfUsers={(userObject: User) =>
+					setListOfUsers((prev) => {
+						const newArray = [...prev];
+
+						newArray.push(userObject);
+
+						return newArray;
+					})
+				}
+			/>
+			<UsersList listOfUsers={listOfUsers} />
 		</div>
 	);
 };
